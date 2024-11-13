@@ -1,7 +1,6 @@
 import { client } from "@/lib/rpc";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { InferRequestType, InferResponseType } from "hono";
-import { useRouter } from "next/navigation";
 
 type ResponseType = InferResponseType<
   (typeof client.api.tasks)[":taskId"]["$delete"],
@@ -13,7 +12,6 @@ type RequestType = InferRequestType<
 >;
 
 export const useDeleteTask = () => {
-  const router = useRouter();
   const queryClient = useQueryClient();
 
   const mutation = useMutation<ResponseType, Error, RequestType>({
@@ -25,7 +23,6 @@ export const useDeleteTask = () => {
       return await res.json();
     },
     onSuccess({ data }) {
-      router.refresh();
       queryClient.invalidateQueries({
         queryKey: ["tasks"],
       });

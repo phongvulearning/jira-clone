@@ -20,7 +20,7 @@ export const useSignIn = () => {
       if (!res.ok) throw new Error("Failed to sign in!");
       return await res.json();
     },
-  onSuccess() {
+    onSuccess() {
       router.refresh();
       toast.success("Sign in successfully!");
       queryClient.invalidateQueries({
