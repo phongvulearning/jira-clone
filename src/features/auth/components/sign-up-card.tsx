@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
+// import { FcGoogle } from "react-icons/fc";
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -122,7 +122,7 @@ export const SignUpCard = () => {
         <DottedSeparator />
       </div>
       <CardContent className="p-7 flex flex-col gap-y-2">
-        <Button
+        {/* <Button
           disabled={isPending}
           variant="secondary"
           size="lg"
@@ -130,7 +130,7 @@ export const SignUpCard = () => {
         >
           <FcGoogle className="size-5 mr-2" />
           Login with Google
-        </Button>
+        </Button> */}
         <Button
           onClick={() => signUpWithGithub()}
           disabled={isPending}
@@ -147,7 +147,7 @@ export const SignUpCard = () => {
       </div>
       <CardContent className="p-7 flex items-center justify-center">
         <p>
-          already have an account?
+          Already have an account?
           <Link href="/sign-in">
             <span className="text-blue-700">&nbsp;Sign In</span>
           </Link>

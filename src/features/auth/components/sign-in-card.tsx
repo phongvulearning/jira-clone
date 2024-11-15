@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
+// import { FcGoogle } from "react-icons/fc";
 
 import {
   Form,
@@ -33,7 +33,6 @@ export const SignInCard = () => {
   });
 
   const onSubmit = (values: SignInSchema) => {
-    console.log("values", values);
     mutate({ json: values });
   };
 
@@ -90,7 +89,7 @@ export const SignInCard = () => {
         <DottedSeparator />
       </div>
       <CardContent className="p-7 flex flex-col gap-y-4">
-        <Button
+        {/* <Button
           onClick={() => {}}
           disabled={isPending}
           variant="secondary"
@@ -99,7 +98,7 @@ export const SignInCard = () => {
         >
           <FcGoogle className="size-5 mr-2" />
           Login with Google
-        </Button>
+        </Button> */}
         <Button
           onClick={() => signUpWithGithub()}
           disabled={isPending}
